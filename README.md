@@ -58,8 +58,8 @@ An AI-powered full-stack system for predicting and monitoring rockfall risks in 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Bunny6397/Rockfall-AI-Monitor.git
-   cd Rockfall-AI-Monitor
+   git clone https://github.com/Bunny6397/RockFall-AI-Monitor.git
+   cd RockFall-AI-Monitor
    ```
 
 2. **Install dependencies**
@@ -259,7 +259,7 @@ For support, email support@rockfallmonitor.com or open an issue on GitHub.
 
 - [Live Demo](http://localhost:8000) (when running locally)
 - [API Documentation](API_DOCUMENTATION.md)
-- [GitHub Repository](https://github.com/Bunny6397/Rockfall-AI-Monitor)
+- [GitHub Repository](https://github.com/Bunny6397/RockFall-AI-Monitor)
 
 ---
 

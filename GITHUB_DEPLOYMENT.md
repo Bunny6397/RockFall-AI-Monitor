@@ -8,7 +8,7 @@ Your Rockfall AI Monitor project has been successfully pushed to GitHub.
 
 ## 📦 Repository Information
 
-**Repository URL**: https://github.com/Bunny6397/Rockfall-AI-Monitor
+**Repository URL**: https://github.com/Bunny6397/RockFall-AI-Monitor
 
 **Branch**: main
 
@@ -55,12 +55,12 @@ Your Rockfall AI Monitor project has been successfully pushed to GitHub.
 
 ### View on GitHub
 ```
-https://github.com/Bunny6397/Rockfall-AI-Monitor
+https://github.com/Bunny6397/RockFall-AI-Monitor
 ```
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/Bunny6397/Rockfall-AI-Monitor.git
+git clone https://github.com/Bunny6397/RockFall-AI-Monitor.git
 ```
 
 ### Repository Features Available
@@ -144,7 +144,7 @@ git push origin feature/new-feature
 ## 📝 Repository Structure on GitHub
 
 ```
-Bunny6397/Rockfall-AI-Monitor/
+Bunny6397/RockFall-AI-Monitor/
 ├── .github/
 │   └── ISSUE_TEMPLATE/
 │       ├── bug_report.md
@@ -223,7 +223,7 @@ Track development progress with project boards
 
 Your Rockfall AI Monitor is now:
 - ✅ Fully deployed to GitHub
-- ✅ Accessible at https://github.com/Bunny6397/Rockfall-AI-Monitor
+- ✅ Accessible at https://github.com/Bunny6397/RockFall-AI-Monitor
 - ✅ Ready for collaboration
 - ✅ Open for contributions
 - ✅ Properly documented
@@ -242,10 +242,10 @@ If you need help with GitHub:
 
 ## 🔗 Quick Links
 
-- **Repository**: https://github.com/Bunny6397/Rockfall-AI-Monitor
-- **Issues**: https://github.com/Bunny6397/Rockfall-AI-Monitor/issues
-- **Pull Requests**: https://github.com/Bunny6397/Rockfall-AI-Monitor/pulls
-- **Settings**: https://github.com/Bunny6397/Rockfall-AI-Monitor/settings
+- **Repository**: https://github.com/Bunny6397/RockFall-AI-Monitor
+- **Issues**: https://github.com/Bunny6397/RockFall-AI-Monitor/issues
+- **Pull Requests**: https://github.com/Bunny6397/RockFall-AI-Monitor/pulls
+- **Settings**: https://github.com/Bunny6397/RockFall-AI-Monitor/settings
 
 ---
 
