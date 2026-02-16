@@ -3,7 +3,7 @@
 
 const CONFIG = {
     // Detect if backend is available
-    USE_BACKEND: false, // Set to false for GitHub Pages deployment
+    USE_BACKEND: false, // Set to false for static deployment (Vercel, GitHub Pages, Netlify)
     
     // API endpoints (only used if USE_BACKEND is true)
     API_BASE_URL: 'http://localhost:3000/api',
