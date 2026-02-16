@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Rockfall Prediction System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="config.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🏔️ Rockfall AI Monitor</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="risk-map.html">Risk Map</a>
+                <a href="alerts.html">Alerts</a>
+                <a href="data-sources.html">Data Sources</a>
+                <a href="analytics.html" class="active">Analytics</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="section">
+            <h2>ML Model Performance</h2>
+            <div class="model-stats">
+                <div class="model-metric">
+                    <span>Accuracy</span>
+                    <strong>94.2%</strong>
+                </div>
+                <div class="model-metric">
+                    <span>Precision</span>
+                    <strong>91.8%</strong>
+                </div>
+                <div class="model-metric">
+                    <span>Recall</span>
+                    <strong>89.5%</strong>
+                </div>
+                <div class="model-metric">
+                    <span>F1 Score</span>
+                    <strong>90.6%</strong>
+                </div>
+                <div class="model-metric">
+                    <span>Last Training</span>
+                    <strong>2 hours ago</strong>
+                </div>
+                <div class="model-metric">
+                    <span>Training Samples</span>
+                    <strong>15,420</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Performance Analytics</h2>
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3>Prediction Accuracy Over Time</h3>
+                    <canvas id="accuracyChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Risk Distribution</h3>
+                    <canvas id="riskDistChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Sensor Performance</h2>
+            <div class="sensor-performance">
+                <div class="performance-card">
+                    <h4>Displacement Sensors</h4>
+                    <p>Uptime: 99.8%</p>
+                    <p>Accuracy: ±0.5mm</p>
+                    <p>Data Points: 45,230</p>
+                </div>
+                <div class="performance-card">
+                    <h4>Strain Gauges</h4>
+                    <p>Uptime: 98.5%</p>
+                    <p>Accuracy: ±0.0001</p>
+                    <p>Data Points: 38,450</p>
+                </div>
+                <div class="performance-card">
+                    <h4>Pore Pressure</h4>
+                    <p>Uptime: 97.2%</p>
+                    <p>Accuracy: ±2 kPa</p>
+                    <p>Data Points: 32,180</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Historical Incidents</h2>
+            <div class="incidents-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Zone</th>
+                            <th>Predicted Risk</th>
+                            <th>Actual Outcome</th>
+                            <th>Accuracy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024-02-10</td>
+                            <td>Zone A-3</td>
+                            <td>82%</td>
+                            <td>Rockfall occurred</td>
+                            <td><span class="badge success">Correct</span></td>
+                        </tr>
+                        <tr>
+                            <td>2024-02-05</td>
+                            <td>Zone B-2</td>
+                            <td>68%</td>
+                            <td>Minor displacement</td>
+                            <td><span class="badge success">Correct</span></td>
+                        </tr>
+                        <tr>
+                            <td>2024-01-28</td>
+                            <td>Zone C-3</td>
+                            <td>45%</td>
+                            <td>No incident</td>
+                            <td><span class="badge success">Correct</span></td>
+                        </tr>
+                        <tr>
+                            <td>2024-01-20</td>
+                            <td>Zone D-1</td>
+                            <td>55%</td>
+                            <td>Unexpected rockfall</td>
+                            <td><span class="badge warning">Missed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-copyright">
+                © 2026 Rockfall AI Monitor. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="analytics.js"></script>
+</body>
+</html>

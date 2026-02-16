@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Sources - Rockfall Prediction System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="config.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🏔️ Rockfall AI Monitor</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="risk-map.html">Risk Map</a>
+                <a href="alerts.html">Alerts</a>
+                <a href="data-sources.html" class="active">Data Sources</a>
+                <a href="analytics.html">Analytics</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="section">
+            <h2>Data Input Sources</h2>
+            <div class="data-grid">
+                <div class="data-card">
+                    <h3>📊 DEM Data</h3>
+                    <p>Digital Elevation Models</p>
+                    <input type="file" id="dem-upload" accept=".tif,.geotiff">
+                    <button class="btn" onclick="uploadData('dem')">Upload DEM</button>
+                    <div class="data-status">
+                        <p>Last upload: 2 days ago</p>
+                        <p>Files: 3 processed</p>
+                    </div>
+                </div>
+                <div class="data-card">
+                    <h3>🚁 Drone Imagery</h3>
+                    <p>Aerial photographs</p>
+                    <input type="file" id="drone-upload" accept="image/*" multiple>
+                    <button class="btn" onclick="uploadData('drone')">Upload Images</button>
+                    <div class="data-status">
+                        <p>Last upload: 6 hours ago</p>
+                        <p>Images: 127 processed</p>
+                    </div>
+                </div>
+                <div class="data-card">
+                    <h3>📡 Sensor Data</h3>
+                    <p>Displacement, strain, pressure</p>
+                    <input type="file" id="sensor-upload" accept=".csv,.json">
+                    <button class="btn" onclick="uploadData('sensor')">Upload Data</button>
+                    <div class="data-status">
+                        <p>Last upload: 5 min ago</p>
+                        <p>Records: 1,245 processed</p>
+                    </div>
+                </div>
+                <div class="data-card">
+                    <h3>🌦️ Environmental</h3>
+                    <p>Weather & seismic data</p>
+                    <button class="btn" onclick="fetchWeather()">Fetch Live Data</button>
+                    <div class="data-status" id="weather-status">
+                        <p>Last updated: 2 min ago</p>
+                        <p>Temperature: 18°C</p>
+                        <p>Rainfall: 5mm (24h)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Recent Uploads</h2>
+            <div class="upload-history">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Type</th>
+                            <th>Filename</th>
+                            <th>Size</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024-02-17 14:25</td>
+                            <td>Sensor</td>
+                            <td>sensor_data_20240217.csv</td>
+                            <td>2.4 MB</td>
+                            <td><span class="badge success">Processed</span></td>
+                            <td><button class="btn-small" onclick="viewUploadDetails('sensor_data_20240217.csv', 'Sensor')">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>2024-02-17 08:15</td>
+                            <td>Drone</td>
+                            <td>aerial_survey_batch_42.zip</td>
+                            <td>156 MB</td>
+                            <td><span class="badge success">Processed</span></td>
+                            <td><button class="btn-small" onclick="viewUploadDetails('aerial_survey_batch_42.zip', 'Drone')">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>2024-02-15 16:30</td>
+                            <td>DEM</td>
+                            <td>elevation_model_v3.tif</td>
+                            <td>45 MB</td>
+                            <td><span class="badge success">Processed</span></td>
+                            <td><button class="btn-small" onclick="viewUploadDetails('elevation_model_v3.tif', 'DEM')">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>2024-02-15 12:00</td>
+                            <td>Sensor</td>
+                            <td>sensor_data_20240215.csv</td>
+                            <td>2.1 MB</td>
+                            <td><span class="badge success">Processed</span></td>
+                            <td><button class="btn-small" onclick="viewUploadDetails('sensor_data_20240215.csv', 'Sensor')">View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Data Processing Pipeline</h2>
+            <div class="pipeline">
+                <div class="pipeline-step">
+                    <div class="step-number">1</div>
+                    <h4>Upload</h4>
+                    <p>Data received and validated</p>
+                </div>
+                <div class="pipeline-arrow">→</div>
+                <div class="pipeline-step">
+                    <div class="step-number">2</div>
+                    <h4>Preprocessing</h4>
+                    <p>Cleaning and normalization</p>
+                </div>
+                <div class="pipeline-arrow">→</div>
+                <div class="pipeline-step">
+                    <div class="step-number">3</div>
+                    <h4>Feature Extraction</h4>
+                    <p>ML feature engineering</p>
+                </div>
+                <div class="pipeline-arrow">→</div>
+                <div class="pipeline-step">
+                    <div class="step-number">4</div>
+                    <h4>Prediction</h4>
+                    <p>Risk assessment</p>
+                </div>
+                <div class="pipeline-arrow">→</div>
+                <div class="pipeline-step">
+                    <div class="step-number">5</div>
+                    <h4>Alert Generation</h4>
+                    <p>Notifications sent</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Sensor Network Status</h2>
+            <div class="sensor-grid">
+                <div class="sensor-status online">
+                    <h4>Displacement Sensors</h4>
+                    <p class="sensor-count">18 / 18 Online</p>
+                    <p>Last reading: 2 min ago</p>
+                </div>
+                <div class="sensor-status online">
+                    <h4>Strain Gauges</h4>
+                    <p class="sensor-count">12 / 12 Online</p>
+                    <p>Last reading: 1 min ago</p>
+                </div>
+                <div class="sensor-status warning">
+                    <h4>Pore Pressure</h4>
+                    <p class="sensor-count">7 / 8 Online</p>
+                    <p>Last reading: 5 min ago</p>
+                </div>
+                <div class="sensor-status online">
+                    <h4>Weather Stations</h4>
+                    <p class="sensor-count">5 / 5 Online</p>
+                    <p>Last reading: 30 sec ago</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-copyright">
+                © 2026 Rockfall AI Monitor. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="data-sources.js"></script>
+</body>
+</html>

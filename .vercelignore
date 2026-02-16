@@ -1,0 +1,12 @@
+server.js
+node_modules
+package.json
+package-lock.json
+.env
+.env.example
+uploads
+*.md
+!README.md
+start.sh
+stop.sh
+verify-project.js
