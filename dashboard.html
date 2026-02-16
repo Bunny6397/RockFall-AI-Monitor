@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Rockfall Prediction System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🏔️ Rockfall AI Monitor</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="risk-map.html">Risk Map</a>
+                <a href="alerts.html">Alerts</a>
+                <a href="data-sources.html">Data Sources</a>
+                <a href="analytics.html">Analytics</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="section">
+            <h2>Real-Time Dashboard</h2>
+            <div class="stats-grid">
+                <div class="stat-card high-risk">
+                    <h3>High Risk Zones</h3>
+                    <p class="stat-value" id="high-risk-count">3</p>
+                    <p class="stat-label">Active Warnings</p>
+                </div>
+                <div class="stat-card medium-risk">
+                    <h3>Medium Risk Zones</h3>
+                    <p class="stat-value" id="medium-risk-count">7</p>
+                    <p class="stat-label">Monitor Closely</p>
+                </div>
+                <div class="stat-card low-risk">
+                    <h3>Low Risk Zones</h3>
+                    <p class="stat-value" id="low-risk-count">15</p>
+                    <p class="stat-label">Stable</p>
+                </div>
+                <div class="stat-card sensors">
+                    <h3>Active Sensors</h3>
+                    <p class="stat-value" id="sensor-count">42</p>
+                    <p class="stat-label">Online</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>Risk Probability Trends (Last 7 Days)</h3>
+                <canvas id="riskChart"></canvas>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Recent Activity</h2>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <span class="activity-time">2 min ago</span>
+                    <span class="activity-text">Zone A-1 risk increased to 85%</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-time">15 min ago</span>
+                    <span class="activity-text">Sensor S-042 reported displacement of 12mm</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-time">1 hour ago</span>
+                    <span class="activity-text">Weather data updated - Heavy rainfall expected</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-time">2 hours ago</span>
+                    <span class="activity-text">ML model retrained with new data</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-copyright">
+                © 2026 Rockfall AI Monitor. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Map - Rockfall Prediction System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🏔️ Rockfall AI Monitor</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="risk-map.html" class="active">Risk Map</a>
+                <a href="alerts.html">Alerts</a>
+                <a href="data-sources.html">Data Sources</a>
+                <a href="analytics.html">Analytics</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="section">
+            <h2>Interactive Risk Map</h2>
+            <div class="map-controls">
+                <button class="btn" onclick="updateMap('all')">All Zones</button>
+                <button class="btn btn-danger" onclick="updateMap('high')">High Risk Only</button>
+                <button class="btn" onclick="updateMap('medium')">Medium Risk</button>
+                <button class="btn" onclick="updateMap('low')">Low Risk</button>
+                <button class="btn" onclick="toggleSensors()">Toggle Sensors</button>
+                <button class="btn" onclick="toggleHeatmap()">Toggle Heatmap</button>
+            </div>
+            <div id="map"></div>
+            <div class="legend">
+                <h4>Risk Levels</h4>
+                <div class="legend-item"><span class="legend-color high"></span> High (>70%)</div>
+                <div class="legend-item"><span class="legend-color medium"></span> Medium (40-70%)</div>
+                <div class="legend-item"><span class="legend-color low"></span> Low (<40%)</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Zone Details</h2>
+            <div class="zone-grid">
+                <div class="zone-card high">
+                    <h3>Zone A-1</h3>
+                    <p class="zone-risk">Risk: HIGH (85%)</p>
+                    <p>📍 Bhopal Region</p>
+                    <p>Displacement: 15mm</p>
+                    <p>Strain: 0.0052</p>
+                    <p>Status: Critical</p>
+                    <button class="btn btn-danger" onclick="viewZoneDetails('Zone A-1')">View Details</button>
+                </div>
+                <div class="zone-card high">
+                    <h3>Zone A-2</h3>
+                    <p class="zone-risk">Risk: HIGH (78%)</p>
+                    <p>📍 Bhopal Region</p>
+                    <p>Displacement: 12mm</p>
+                    <p>Strain: 0.0048</p>
+                    <p>Status: Critical</p>
+                    <button class="btn btn-danger" onclick="viewZoneDetails('Zone A-2')">View Details</button>
+                </div>
+                <div class="zone-card high">
+                    <h3>Zone B-1</h3>
+                    <p class="zone-risk">Risk: HIGH (72%)</p>
+                    <p>📍 Bhopal Region</p>
+                    <p>Displacement: 10mm</p>
+                    <p>Strain: 0.0041</p>
+                    <p>Status: Warning</p>
+                    <button class="btn btn-danger" onclick="viewZoneDetails('Zone B-1')">View Details</button>
+                </div>
+                <div class="zone-card medium">
+                    <h3>Zone C-1</h3>
+                    <p class="zone-risk">Risk: MEDIUM (55%)</p>
+                    <p>📍 Bhopal Region</p>
+                    <p>Displacement: 6mm</p>
+                    <p>Strain: 0.0028</p>
+                    <p>Status: Monitor</p>
+                    <button class="btn" onclick="viewZoneDetails('Zone C-1')">View Details</button>
+                </div>
+                <div class="zone-card medium">
+                    <h3>Zone C-2</h3>
+                    <p class="zone-risk">Risk: MEDIUM (48%)</p>
+                    <p>📍 Bhopal Region</p>
+                    <p>Displacement: 5mm</p>
+                    <p>Strain: 0.0024</p>
+                    <p>Status: Monitor</p>
+                    <button class="btn" onclick="viewZoneDetails('Zone C-2')">View Details</button>
+                </div>
+                <div class="zone-card medium">
+                    <h3>Zone D-1</h3>
+                    <p class="zone-risk">Risk: MEDIUM (52%)</p>
+                    <p>📍 Bhopal Region</p>
+                    <p>Displacement: 7mm</p>
+                    <p>Strain: 0.0030</p>
+                    <p>Status: Monitor</p>
+                    <button class="btn" onclick="viewZoneDetails('Zone D-1')">View Details</button>
+                </div>
+                <div class="zone-card low">
+                    <h3>Zone E-1</h3>
+                    <p class="zone-risk">Risk: LOW (25%)</p>
+                    <p>📍 Bhopal Region</p>
+                    <p>Displacement: 2mm</p>
+                    <p>Strain: 0.0012</p>
+                    <p>Status: Stable</p>
+                    <button class="btn" onclick="viewZoneDetails('Zone E-1')">View Details</button>
+                </div>
+                <div class="zone-card low">
+                    <h3>Zone E-2</h3>
+                    <p class="zone-risk">Risk: LOW (18%)</p>
+                    <p>📍 Bhopal Region</p>
+                    <p>Displacement: 1mm</p>
+                    <p>Strain: 0.0008</p>
+                    <p>Status: Stable</p>
+                    <button class="btn" onclick="viewZoneDetails('Zone E-2')">View Details</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-copyright">
+                © 2026 Rockfall AI Monitor. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="risk-map.js"></script>
+</body>
+</html>
