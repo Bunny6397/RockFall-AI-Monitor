@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rockfall AI Monitor - GitHub Pages</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 800px;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .info-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: left;
+            border-radius: 8px;
+        }
+        
+        .info-box h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box p {
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-box code {
+            background: #e9ecef;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            margin: 0.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .feature {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .steps {
+            text-align: left;
+            margin: 2rem 0;
+        }
+        
+        .step {
+            background: #f8f9fa;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏔️ Rockfall AI Monitor</h1>
+        <p class="subtitle">AI-Powered Rockfall Prediction System for Open-Pit Mines</p>
+        
+        <div class="info-box">
+            <h3>⚠️ GitHub Pages Deployment Notice</h3>
+            <p>This project requires a backend server to run fully. GitHub Pages only hosts static files.</p>
+            <p><strong>To run the complete application with all features:</strong></p>
+        </div>
+        
+        <div class="steps">
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Clone the repository:</strong><br>
+                <code>git clone https://github.com/Bunny6397/RockFall-AI-Monitor.git</code>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Install dependencies:</strong><br>
+                <code>cd RockFall-AI-Monitor && npm install</code>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Start the application:</strong><br>
+                <code>./start.sh</code> or <code>npm start</code>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">4</span>
+                <strong>Open in browser:</strong><br>
+                <code>http://localhost:8000</code>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🗺️</div>
+                <h4>Interactive Maps</h4>
+                <p>8 risk zones with real-time data</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🚨</div>
+                <h4>Alert System</h4>
+                <p>Real-time notifications</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h4>Analytics</h4>
+                <p>Data visualization</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🤖</div>
+                <h4>AI Predictions</h4>
+                <p>ML-based forecasting</p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 2rem;">
+            <a href="https://github.com/Bunny6397/RockFall-AI-Monitor" class="btn" target="_blank">
+                📦 View on GitHub
+            </a>
+            <a href="https://github.com/Bunny6397/RockFall-AI-Monitor#readme" class="btn btn-secondary" target="_blank">
+                📖 Read Documentation
+            </a>
+        </div>
+        
+        <div class="info-box" style="margin-top: 2rem;">
+            <h3>📋 Project Features</h3>
+            <p>✅ 9 Complete Pages (Home, Dashboard, Risk Map, Alerts, Data Sources, Analytics, Privacy, Terms, Contact)</p>
+            <p>✅ Backend API with 20+ Endpoints</p>
+            <p>✅ Interactive Maps with Leaflet.js</p>
+            <p>✅ Charts with Chart.js</p>
+            <p>✅ Responsive Design</p>
+            <p>✅ Comprehensive Documentation</p>
+        </div>
+        
+        <div style="margin-top: 2rem; color: #666; font-size: 0.9rem;">
+            <p>© 2026 Rockfall AI Monitor. All rights reserved.</p>
+            <p>Built with ❤️ for mining safety and rockfall prevention</p>
+        </div>
+    </div>
+</body>
+</html>
