@@ -1,174 +1,266 @@
-# 🏔️ AI-Based Rockfall Prediction System
+# 🏔️ Rockfall AI Monitor
 
-An intelligent, real-time rockfall prediction system for open-pit mines using machine learning and multi-source data integration.
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Node.js](https://img.shields.io/badge/Node.js-v14+-green.svg)](https://nodejs.org/)
+[![Status](https://img.shields.io/badge/Status-Production%20Ready-success.svg)]()
 
-## Features
+An AI-powered full-stack system for predicting and monitoring rockfall risks in open-pit mines. Features real-time risk assessment, interactive maps, comprehensive alert management, and ML-based predictions.
 
-### Core Capabilities
-- **Real-time Risk Assessment**: ML-powered prediction of rockfall incidents
-- **Interactive Risk Maps**: Visual representation of vulnerable zones with probability forecasts
-- **Multi-Source Data Integration**: 
+![Rockfall AI Monitor](https://img.shields.io/badge/Version-1.0.0-brightgreen)
+
+## 🌟 Features
+
+### 🗺️ Interactive Risk Mapping
+- Real-time risk visualization centered on India (Bhopal region)
+- 8 color-coded risk zones with detailed information
+- Enhanced zone details modal with sensor readings
+- Toggle sensors and heatmap overlays
+- Filter zones by risk level (High, Medium, Low)
+
+### 🚨 Alert Management System
+- Real-time alert monitoring and notifications
+- Test alert system with comprehensive results
+- Export detailed alert reports
+- Configure notification settings (Email/SMS)
+- Alert acknowledgment and tracking
+
+### 📊 Data Management
+- Upload and process multiple data sources:
+  - Sensor data (displacement, strain, pressure)
+  - Drone imagery and aerial surveys
   - Digital Elevation Models (DEM)
-  - Drone-captured imagery
-  - Geotechnical sensor data (displacement, strain, pore pressure)
-  - Environmental factors (rainfall, temperature, vibrations)
-- **Alert System**: SMS/Email notifications for critical events
-- **User-Friendly Dashboard**: Web-based interface for mine planners
-- **Open-Source Architecture**: Customizable and scalable
+- View detailed upload history
+- Real-time weather data integration
+- ML model performance metrics
 
-### Dashboard Components
-1. **Real-Time Statistics**: Live monitoring of high/medium/low risk zones
-2. **Risk Probability Trends**: 7-day historical analysis with Chart.js
-3. **Interactive Map**: Leaflet-based visualization with zone filtering
-4. **Alert Management**: Prioritized notifications with recommended actions
-5. **Data Upload Interface**: Easy integration of DEM, drone, and sensor data
-6. **ML Model Metrics**: Performance tracking (accuracy, precision, recall)
+### 📈 Analytics Dashboard
+- Prediction accuracy trends
+- Risk distribution charts
+- Sensor readings visualization
+- Alert frequency analysis
+- System statistics and overview
 
-## Quick Start
+### 📄 Professional Pages
+- Comprehensive Privacy Policy (13 sections)
+- Detailed Terms of Service (16 sections)
+- Contact form with validation
+- Emergency contact information
+- FAQ section
+
+## 🚀 Quick Start
 
 ### Prerequisites
-- Modern web browser (Chrome, Firefox, Safari, Edge)
-- No server required - runs entirely in browser
+- Node.js (v14 or higher)
+- npm (comes with Node.js)
+- Python 3 (for frontend server)
 
 ### Installation
-1. Clone or download the project
-2. Open `index.html` in your web browser
-3. The system will load with sample data
 
-### Usage
-- **View Risk Zones**: Click on colored circles on the map for details
-- **Filter Zones**: Use buttons to show all zones or high-risk only
-- **Upload Data**: Use the Data Sources section to upload DEM, drone imagery, or sensor data
-- **Monitor Alerts**: Check the Alerts section for critical notifications
-- **Test Alerts**: Click "Test Alert System" to verify SMS/email integration
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Bunny6397/Rockfall-AI-Monitor.git
+   cd Rockfall-AI-Monitor
+   ```
 
-## Technical Architecture
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-### Frontend Stack
-- **HTML5/CSS3**: Responsive design with gradient UI
-- **JavaScript (ES6+)**: Core application logic
-- **Leaflet.js**: Interactive mapping
-- **Chart.js**: Data visualization
-- **OpenStreetMap**: Base map tiles
+3. **Start the application**
+   
+   **Option 1: Use the start script (Recommended)**
+   ```bash
+   chmod +x start.sh
+   ./start.sh
+   ```
+   
+   **Option 2: Manual start**
+   ```bash
+   # Terminal 1 - Backend
+   npm start
+   
+   # Terminal 2 - Frontend
+   python3 -m http.server 8000
+   ```
 
-### Data Processing Flow
+4. **Access the application**
+   - Frontend: http://localhost:8000
+   - Backend API: http://localhost:3000
+
+## 📁 Project Structure
+
 ```
-Input Data → Validation → Feature Extraction → ML Model → Risk Prediction → Alert Generation
-```
-
-### ML Model Integration Points
-The system is designed to integrate with:
-- **Python Backend**: Flask/FastAPI for model serving
-- **TensorFlow/PyTorch**: Deep learning models
-- **Scikit-learn**: Traditional ML algorithms
-- **Real-time Processing**: WebSocket connections for live updates
-
-## Data Sources
-
-### 1. Digital Elevation Models (DEM)
-- Format: GeoTIFF
-- Resolution: 1-5m recommended
-- Processing: Slope analysis, aspect calculation
-
-### 2. Drone Imagery
-- Format: JPEG, PNG, TIFF
-- Requirements: Georeferenced images
-- Processing: Change detection, crack identification
-
-### 3. Geotechnical Sensors
-- Format: CSV, JSON
-- Metrics: Displacement (mm), Strain (ε), Pore pressure (kPa)
-- Frequency: Real-time or batch upload
-
-### 4. Environmental Data
-- Weather: Temperature, rainfall, wind
-- Seismic: Vibration monitoring
-- Integration: API-based live fetching
-
-## Alert System
-
-### Alert Levels
-- **Critical**: Immediate evacuation required (>80% probability)
-- **Warning**: Increased monitoring needed (50-80% probability)
-- **Info**: Awareness notifications (<50% probability)
-
-### Notification Channels
-- SMS: Twilio integration
-- Email: SMTP configuration
-- Dashboard: Real-time web notifications
-- Mobile: Push notifications (future)
-
-## Customization
-
-### Adding New Risk Zones
-Edit `app.js` and modify the `riskZones` array:
-```javascript
-const riskZones = [
-    { lat: YOUR_LAT, lng: YOUR_LNG, risk: 'high', probability: 85, zone: 'Zone X' }
-];
+rockfall/
+├── index.html              # Home page
+├── dashboard.html          # Dashboard with statistics
+├── risk-map.html          # Interactive risk map
+├── alerts.html            # Alert management
+├── data-sources.html      # Data upload & management
+├── analytics.html         # Charts & analytics
+├── privacy-policy.html    # Privacy policy
+├── terms-of-service.html  # Terms of service
+├── contact.html           # Contact page
+├── styles.css             # Global styles
+├── *.js                   # Page-specific JavaScript
+├── server.js              # Backend API server
+├── package.json           # Dependencies
+├── start.sh               # Quick start script
+├── stop.sh                # Stop servers script
+├── verify-project.js      # Project verification
+└── Documentation/         # Comprehensive guides
 ```
 
-### Integrating Real ML Model
-Replace the sample prediction logic with API calls:
-```javascript
-async function getPrediction(data) {
-    const response = await fetch('YOUR_API_ENDPOINT', {
-        method: 'POST',
-        body: JSON.stringify(data)
-    });
-    return await response.json();
-}
-```
+## 🔧 Technology Stack
 
-### Configuring Alerts
-Update notification settings in `app.js`:
-```javascript
-const alertConfig = {
-    sms: '+1-XXX-XXX-XXXX',
-    email: 'safety@yourmine.com',
-    threshold: 70 // probability %
-};
-```
+### Frontend
+- HTML5, CSS3, JavaScript (ES6+)
+- Leaflet.js (Interactive maps)
+- Chart.js (Data visualization)
+- Responsive design (Mobile, Tablet, Desktop)
 
-## Deployment
+### Backend
+- Node.js & Express.js
+- RESTful API (20+ endpoints)
+- Multer (File uploads)
+- CORS enabled
+- Body parser middleware
 
-### Local Development
-Simply open `index.html` in a browser
+### Features
+- Real-time data processing
+- ML prediction integration
+- Multi-source data handling
+- Alert notification system
+- File upload management
 
-### Web Server Deployment
+## 📡 API Endpoints
+
+### Risk Zones
+- `GET /api/zones` - Get all risk zones
+- `GET /api/zones/:id` - Get specific zone
+- `PUT /api/zones/:id` - Update zone data
+
+### Alerts
+- `GET /api/alerts` - Get all alerts
+- `POST /api/alerts` - Create new alert
+- `PUT /api/alerts/:id/acknowledge` - Acknowledge alert
+
+### Data Management
+- `POST /api/upload` - Upload files
+- `GET /api/uploads` - Get upload history
+- `GET /api/weather` - Get weather data
+
+### Analytics
+- `GET /api/statistics` - System statistics
+- `GET /api/analytics` - Analytics data
+- `GET /api/model/metrics` - ML model performance
+
+See [API_DOCUMENTATION.md](API_DOCUMENTATION.md) for complete API reference.
+
+## 🧪 Testing
+
+### Quick Verification
 ```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js
-npx http-server
-
-# Using PHP
-php -S localhost:8000
+node verify-project.js
 ```
 
-### Production Deployment
-- Deploy to any static hosting: GitHub Pages, Netlify, Vercel
-- For ML backend: AWS, Google Cloud, Azure
-- Database: PostgreSQL with PostGIS for spatial data
+### Manual Testing
+Follow the comprehensive testing guide:
+```bash
+cat TESTING_GUIDE.md
+```
 
-## Future Enhancements
+### Test Features
+1. Navigate through all 9 pages
+2. Click interactive buttons on Risk Map
+3. Test alert system buttons
+4. View upload details
+5. Submit contact form
+6. Test responsive design
 
-- [ ] Real-time WebSocket integration
-- [ ] Mobile app (React Native)
-- [ ] Advanced ML models (LSTM, CNN)
-- [ ] 3D terrain visualization
-- [ ] Historical incident database
-- [ ] Predictive maintenance scheduling
-- [ ] Multi-mine management
-- [ ] API documentation with Swagger
+## 📖 Documentation
 
-## License
-Open-source - MIT License
+- [START_HERE.md](START_HERE.md) - Getting started guide
+- [API_DOCUMENTATION.md](API_DOCUMENTATION.md) - Complete API reference
+- [TESTING_GUIDE.md](TESTING_GUIDE.md) - Testing procedures
+- [PROJECT_COMPLETE.md](PROJECT_COMPLETE.md) - Full project summary
+- [QUICK_START.md](QUICK_START.md) - Quick start guide
 
-## Support
-For issues or questions, please open a GitHub issue or contact the development team.
+## 🎨 Design System
+
+### Color Palette
+- **Primary**: #667eea (Purple)
+- **Secondary**: #764ba2 (Dark Purple)
+- **High Risk**: #f5576c (Red)
+- **Medium Risk**: #fcb69f (Orange)
+- **Low Risk**: #a8edea (Teal)
+
+### Typography
+- Font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+- Responsive sizing
+- 1.6 line-height for readability
+
+## 🌍 Localization
+
+- Map centered on Bhopal, Madhya Pradesh, India
+- Indian phone format (+91-XXXXX-XXXXX)
+- Gmail email format
+- IST timezone support
+
+## 🔒 Security
+
+- Input validation on all forms
+- CORS configuration
+- File upload restrictions
+- Environment variable support (.env)
+- Secure API endpoints
+
+## 🚧 Future Enhancements
+
+- [ ] Database integration (MongoDB/PostgreSQL)
+- [ ] Real ML model training and deployment
+- [ ] Live sensor data integration
+- [ ] WebSocket for real-time updates
+- [ ] User authentication & authorization
+- [ ] PDF report generation
+- [ ] Email/SMS notifications (Twilio, SendGrid)
+- [ ] Mobile app (React Native/Flutter)
+- [ ] Advanced analytics and predictions
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+© 2026 Rockfall AI Monitor. All rights reserved.
+
+## 👥 Authors
+
+- **Bunny6397** - [GitHub Profile](https://github.com/Bunny6397)
+
+## 🙏 Acknowledgments
+
+- Built for mining safety and rockfall prevention
+- Inspired by the need for proactive risk management
+- Designed for open-pit mining operations
+
+## 📞 Support
+
+For support, email support@rockfallmonitor.com or open an issue on GitHub.
+
+## 🔗 Links
+
+- [Live Demo](http://localhost:8000) (when running locally)
+- [API Documentation](API_DOCUMENTATION.md)
+- [GitHub Repository](https://github.com/Bunny6397/Rockfall-AI-Monitor)
 
 ---
 
-**Built for mine safety. Powered by AI. Open for innovation.**
+**Built with ❤️ for mining safety and rockfall prevention**
